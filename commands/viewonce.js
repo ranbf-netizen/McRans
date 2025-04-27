@@ -3,15 +3,7 @@ const settings = require('../settings');
 const fs = require('fs');
 const path = require('path');
 
-// Channel info for message context
-const channelInfo = {
-    contextInfo: {
-        forwardingScore: 999,
-        isForwarded: true,
-        forwardedNewsletterMessageInfo: {
-            newsletterJid: '120363161513685998@newsletter',
-            newsletterName: 'KnightBot MD',
-            serverMessageId: -1
+
         }
     }
 };
@@ -25,8 +17,7 @@ async function viewOnceCommand(sock, chatId, message) {
 
         if (!quotedMessage) {
             await sock.sendMessage(chatId, { 
-                text: '❌ Please reply to a view once message!',
-                ...channelInfo
+                text: '❌ Please reply to a view once message!'
             });
             return;
         }
@@ -145,8 +136,7 @@ async function viewOnceCommand(sock, chatId, message) {
     } catch (error) {
         console.error('❌ Error in viewonce command:', error);
         await sock.sendMessage(chatId, { 
-            text: '❌ Error processing view once message! Error: ' + error.message,
-            ...channelInfo
+            text: '❌ Error processing view once message! Error: ' + error.message
         });
     }
 }
