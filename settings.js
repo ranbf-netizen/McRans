@@ -1,6 +1,6 @@
 const settings = {
   packname: 'Knight',
-  author: 'Bot',
+  author: 'McRans',
   botName: "Knight Bot",
   botOwner: 'McRans', // Your name
   ownerNumber: '233593064505', //Your number
