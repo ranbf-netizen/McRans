@@ -27,8 +27,7 @@ async function autoStatusCommand(sock, chatId, senderId, args) {
         // Check if sender is owner
         if (!isOwner(senderId)) {
             await sock.sendMessage(chatId, { 
-                text: '❌ This command can only be used by the owner!',
-                ...channelInfo
+                text: '❌ This command can only be used by the owner!'
             });
             return;
         }
